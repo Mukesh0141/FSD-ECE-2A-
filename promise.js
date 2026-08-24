@@ -46,3 +46,12 @@ Promise.all([promise1, promise2])
 .catch((error) => {
     console.error(error);
 });
+
+
+Promise.race([promise1, promise2])
+.then((response) => {
+    console.log(response);
+})
+.catch((error) => {
+    console.error(error);
+});
