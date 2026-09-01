@@ -1,19 +1,14 @@
 const fs = require('fs');
-
 function sizeChecker(filename) {
-    const limit = 2 * 1024 * 1024; // 2MB limit
+    const limit = 2*1024*1024; // 2MB in bytes
+    const stat = fs.statSync(filename);
 
-    const stats = fs.statSync(filename);
-    const fileSize = stats.size;
-
-    if (fileSize > limit) {
-        console.log("File is too large:", fileSize, "bytes");
-        return false;
-    } else {
-        console.log("File is within limit:", fileSize, "bytes");
-        return true;
+    if(stat.size > limit) {
+        console.log (`File should be less than ${limit} bytes.`);
+    }
+    else {
+        console.log("File has been submitted successfully.");
     }
 }
 
 sizeChecker("notes.txt");
-sizeChecker("myfolder1");
