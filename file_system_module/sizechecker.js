@@ -16,3 +16,4 @@ function sizeChecker(filename) {
 }
 
 sizeChecker("notes.txt");
+sizeChecker("myfolder1");
