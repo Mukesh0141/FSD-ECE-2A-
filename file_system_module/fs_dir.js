@@ -22,3 +22,7 @@ fs.writeFile("./myFolder/notes.txt", "Hello ECE A", (err) => {
     });
     });
 });
+
+fs.readFile("/notes.txt", "utf-8", (err, data) => {
+    console.log(data);
+});
