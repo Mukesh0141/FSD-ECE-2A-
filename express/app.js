@@ -24,9 +24,13 @@ app.get("/api/v1/books",(req, res) => {
    try{
     res.status(200).json ({
     status: "success",
+    count : bookData.length,
     data : {
         book : bookData
     }
+    // count :{
+    //     res.send(bookData.length())
+    // }
 })
 
    } catch (error) {
